@@ -1,9 +1,9 @@
 // Used for disabling unsupported GPUs in macOS
 DefinitionBlock ("", "SSDT", 2, "DRTNIA", "spoof", 0x00000000)
 {
-    External (_SB_.PCI0.PEG0.PEGP, DeviceObj)
+    External (\_SB.PCI0.PEG0.PEGP, DeviceObj)
 
-    Method (_SB.PCI0.PEG0.PEGP._DSM, 4, NotSerialized)  // _DSM: Device-Specific Method
+    Method (\_SB.PCI0.PEG0.PEGP._DSM, 4, NotSerialized)  // _DSM: Device-Specific Method
     {
         If ((!Arg2 || (_OSI ("Darwin") == Zero)))
         {
